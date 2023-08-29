@@ -1,16 +1,122 @@
-body {
-	font-family: $font-family-inter;
+html {
+	height: 100%;
 }
 
+body {
+	font-family: $font-family-inter;
+	font-weight: 400;
+	height: 100%;
+	background-color: $background__all__color;
+}
+
+a {
+	text-decoration: none;
+	color: $color;
+}
+
+main {
+	flex: 1 1 auto;
+}
 .wrapper {
-	position: relative;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
 .container {
 	max-width: $container-width;
 	margin: 0 auto;
-	padding: 0 10.25rem;
+	width: 100%;
+	//padding: 0 10.25rem;
+	box-sizing: border-box;
 }
 
 .button {
+	color: $black__color;
+	font-family: $font-family-inter;
+	font-size: 1.625rem;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 2rem;
+	border-radius: 2.5rem;
+	background: $primary__color;
+}
+
+.accordion-content {
+	max-height: 0;
+	overflow: hidden;
+	transition: all 0.5s ease-in-out;
+
+	&.active {
+		max-height: 20rem;
+		transition: all 0.5s ease-in-out;
+	}
+}
+
+.accordion__mobile-content {
+	max-height: 0;
+	overflow: hidden;
+	transition: all 0.5s ease-in-out;
+
+	&.active {
+		max-height: 50vh;
+		transition: all 0.5s ease-in-out;
+	}
+}
+
+.mt {
+	margin-top: 14.37rem;
+}
+.error__container {
+	margin: 9.36rem auto 16.25rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.button__error {
+	position: relative;
+	padding: 1.28rem 3.75rem;
+}
+
+@include media-width($container-width) {
+	.container {
+		padding: 0;
+	}
+}
+
+@include media-width(1550px) {
+	.container {
+		padding: 0 2rem;
+	}
+}
+
+@include media-width(1500px) {
+	.container {
+		padding: 0 4rem;
+	}
+}
+
+@include media-width(1400px) {
+	.container {
+		padding: 0 5rem;
+	}
+}
+@include media-width(1200px) {
+	.container {
+		padding: 0 3rem;
+	}
+}
+@include media-width(1200px) {
+	.container {
+		padding: 0 1.5rem;
+	}
+}
+
+@include media-width($md) {
+	.container {
+		padding: 0 1.25rem;
+	}
+	.mt {
+		margin-top: 6.31rem;
+	}
 }

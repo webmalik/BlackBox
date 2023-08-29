@@ -1,0 +1,754 @@
+.sms {
+	&__header {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 8.13rem;
+		margin-bottom: 12.55rem;
+		margin-top: 9.36rem;
+	}
+
+	&__title {
+		color: $white__color;
+		font-family: $font-family-Neutral;
+		font-size: 3.75rem;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 5.625rem; /* 150% */
+		text-transform: uppercase;
+
+		span {
+			color: $primary__color;
+		}
+	}
+
+	&__desc {
+		display: flex;
+		gap: 2.5rem;
+		align-items: center;
+	}
+
+	&__desc-arrow {
+		max-width: 6.25rem;
+		width: 100%;
+
+		picture,
+		img {
+			width: 100%;
+		}
+	}
+
+	&__desc-text {
+		color: $white__color;
+		font-family: $font-family-inter;
+		font-size: 1.625rem;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 2.25rem;
+
+		span {
+			color: $primary__color;
+		}
+	}
+
+	&__body {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		margin-bottom: 14.41rem;
+	}
+
+	&__phones {
+		position: relative;
+		margin-right: 7.31rem;
+		.sms__phone-1 {
+			max-width: 18.75rem;
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: auto;
+			bottom: auto;
+			overflow: hidden;
+
+			picture,
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+		.sms__phone-2 {
+			max-width: 22.5rem;
+			width: 100%;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			top: auto;
+			left: auto;
+
+			picture,
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 6.88rem;
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 9.38rem 6.88rem;
+	}
+
+	&__grid-arrow {
+		display: none;
+	}
+
+	&__grid-item {
+		display: flex;
+		flex-direction: column;
+		gap: 3.13rem;
+	}
+
+	&__grid-title {
+		color: $primary__color;
+		text-align: left;
+		font-family: $font-family-Neutral;
+		font-size: 3.75rem;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 5.625rem; /* 150% */
+		text-transform: uppercase;
+	}
+
+	&__grid-content {
+		color: $white__color;
+		font-family: $font-family-inter;
+		font-size: 1.25rem;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 1.875rem; /* 150% */
+	}
+
+	&__item {
+		color: $grey__text;
+		font-family: $font-family-inter;
+		font-size: 1.375rem;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 2rem;
+		transition: all 0.3s ease-in-out;
+
+		&:hover {
+			color: $white__color;
+			transition: all 0.3s ease-in-out;
+		}
+	}
+
+	&__button {
+		padding: 1.28rem 2.59rem;
+		color: $black__color;
+		font-family: $font-family-inter;
+		font-size: 1.625rem;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 2rem;
+		margin: 0 auto 0 0;
+	}
+
+	&__cards {
+		display: flex;
+		flex-direction: column;
+		gap: 6.25rem;
+	}
+
+	&__card-title-1 {
+		color: $white__color;
+		font-family: $font-family-Neutral;
+		font-size: 3.75rem;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 5.625rem; /* 150% */
+		text-transform: uppercase;
+	}
+	&__card-title {
+		color: $white__color;
+		font-family: $font-family-inter;
+		font-size: 1.5rem;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 2.125rem; /* 141.667% */
+	}
+
+	&__card-wrapper {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2.5rem;
+	}
+
+	&__card {
+		border-radius: 2.5rem;
+		background: $gray__bg__card;
+		padding: 2.13rem;
+		display: flex;
+		flex-direction: column;
+		gap: 2.5rem;
+		min-height: 20.625rem;
+	}
+
+	&__card-header {
+		display: flex;
+		gap: 2.5rem;
+		align-items: center;
+	}
+
+	&__card-icon {
+		min-width: 6.25rem;
+		min-height: 6.25rem;
+		border-radius: 50%;
+		background-color: $gray__bg;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		picture,
+		img {
+			max-width: 3.125rem;
+			width: 100%;
+		}
+	}
+
+	&__card-body {
+		color: $grey__text;
+		font-family: $font-family-inter;
+		font-size: 1.375rem;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 2rem;
+
+		span {
+			color: $primary__color;
+		}
+	}
+}
+@include media-width($md) {
+	.sms {
+		&__header {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 3.12rem;
+			margin-bottom: 3.75rem;
+			margin-top: 5rem;
+		}
+
+		&__title {
+			color: $white__color;
+			font-family: $font-family-Neutral;
+			font-size: 1.875rem;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 2.75rem;
+			text-transform: uppercase;
+
+			span {
+				color: $primary__color;
+			}
+		}
+
+		&__desc {
+			display: flex;
+			gap: 2.5rem;
+			align-items: center;
+		}
+
+		&__desc-arrow {
+			max-width: 3.125rem;
+			width: 100%;
+			picture,
+			img {
+				width: 100%;
+			}
+		}
+
+		&__desc-text {
+			color: $white__color;
+			font-family: $font-family-inter;
+			font-size: 1rem;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 1.5rem;
+
+			span {
+				color: $primary__color;
+			}
+		}
+
+		&__body {
+			display: grid;
+			grid-template-columns: 1fr;
+			margin-bottom: 6.25rem;
+		}
+
+		&__phones {
+			position: relative;
+			margin-right: 0;
+			display: flex;
+			justify-content: center;
+			height: 100%;
+
+			.sms__phone-1 {
+				max-width: 10rem;
+				width: 100%;
+				position: relative;
+				top: 0;
+				left: 0;
+				right: auto;
+				bottom: auto;
+				overflow: hidden;
+				transform: translateX(-50%);
+
+				picture,
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+			.sms__phone-2 {
+				max-width: 11.875rem;
+				width: 100%;
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				top: auto;
+				left: auto;
+				transform: translateX(-100%);
+
+				picture,
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+		}
+
+		&__content {
+			display: flex;
+			flex-direction: column;
+			gap: 2.5rem;
+		}
+
+		&__grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 3.75rem;
+		}
+
+		&__grid-wrapper {
+			display: flex;
+			gap: 1.25rem;
+		}
+
+		&__grid-arrow {
+			display: none;
+			max-width: 2.5rem;
+			width: 100%;
+			picture,
+			img {
+				width: 100%;
+			}
+		}
+
+		&__grid-item {
+			display: flex;
+			flex-direction: column;
+			gap: 1.25rem;
+		}
+
+		&__grid-title {
+			color: $primary__color;
+			text-align: left;
+			font-family: $font-family-Neutral;
+			font-size: 1.875rem;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 2.75rem;
+			text-transform: uppercase;
+		}
+
+		&__grid-content {
+			color: $white__color;
+			font-family: $font-family-inter;
+			font-size: 1.25rem;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 1.875rem; /* 150% */
+		}
+
+		&__item {
+			color: $grey__text;
+			font-family: $font-family-inter;
+			font-size: 1rem;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 1.5rem;
+			transition: all 0.3s ease-in-out;
+
+			&:hover {
+				color: $white__color;
+				transition: all 0.3s ease-in-out;
+			}
+		}
+
+		&__button {
+			padding: 0.88rem 1.53rem;
+			color: $black__color;
+			font-family: $font-family-inter;
+			font-size: 1rem;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 1.5rem;
+			margin: 0 auto 0 0;
+		}
+
+		&__cards {
+			display: flex;
+			flex-direction: column;
+			gap: 3.12rem;
+		}
+
+		&__card-title-1 {
+			color: $white__color;
+			font-family: $font-family-Neutral;
+			font-size: 1.875rem;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 2.75rem;
+			text-transform: uppercase;
+		}
+		&__card-title {
+			color: $white__color;
+			font-family: $font-family-inter;
+			font-size: 1.125rem;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 1.375rem;
+		}
+
+		&__card-wrapper {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 2.5rem;
+		}
+
+		&__card {
+			border-radius: 2.5rem;
+			background: $gray__bg__card;
+			padding: 2.13rem;
+			display: flex;
+			flex-direction: column;
+			gap: 1.75rem;
+			border: 1px solid $primary__color;
+			min-height: 13.75rem;
+		}
+
+		&__card-header {
+			display: flex;
+			gap: 1.37rem;
+			align-items: center;
+		}
+
+		&__card-icon {
+			min-width: 3.125rem;
+			min-height: 3.125rem;
+			border-radius: 50%;
+			background-color: $gray__bg;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			picture,
+			img {
+				max-width: 1.875rem;
+				width: 100%;
+			}
+		}
+
+		&__card-body {
+			color: $grey__text;
+			font-family: $font-family-inter;
+			font-size: 1rem;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 1.5rem;
+
+			span {
+				color: $primary__color;
+			}
+		}
+	}
+}
+@include media-width($sm) {
+	.sms {
+		&__header {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 3.12rem;
+			margin-bottom: 3.75rem;
+			margin-top: 5rem;
+		}
+
+		&__title {
+			color: $white__color;
+			font-family: $font-family-Neutral;
+			font-size: 1.875rem;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 2.75rem;
+			text-transform: uppercase;
+
+			span {
+				color: $primary__color;
+			}
+		}
+
+		&__desc {
+			display: flex;
+			gap: 2.5rem;
+			align-items: center;
+		}
+
+		&__desc-arrow {
+			max-width: 3.125rem;
+			width: 100%;
+			picture,
+			img {
+				width: 100%;
+			}
+		}
+
+		&__desc-text {
+			color: $white__color;
+			font-family: $font-family-inter;
+			font-size: 1rem;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 1.5rem;
+
+			span {
+				color: $primary__color;
+			}
+		}
+
+		&__body {
+			display: grid;
+			grid-template-columns: 1fr;
+			margin-bottom: 6.25rem;
+		}
+
+		&__phones {
+			position: relative;
+			margin-right: 0;
+			display: block;
+			height: 100%;
+			padding-bottom: 6.25rem;
+
+			.sms__phone-1 {
+				max-width: 10rem;
+				width: 100%;
+				position: relative;
+				top: 0;
+				left: 0;
+				right: auto;
+				bottom: auto;
+				overflow: hidden;
+				transform: translateX(0);
+
+				picture,
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+			.sms__phone-2 {
+				max-width: 11.875rem;
+				width: 100%;
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				top: auto;
+				left: auto;
+				transform: translateX(0);
+
+				picture,
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+		}
+
+		&__content {
+			display: flex;
+			flex-direction: column;
+			gap: 2.5rem;
+		}
+
+		&__grid {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 3.75rem;
+		}
+
+		&__grid-wrapper {
+			display: flex;
+			gap: 1.25rem;
+		}
+
+		&__grid-arrow {
+			display: block;
+			max-width: 2.5rem;
+			width: 100%;
+			padding-top: 0.2rem;
+			picture,
+			img {
+				width: 100%;
+			}
+		}
+
+		&__grid-item {
+			display: flex;
+			flex-direction: column;
+			gap: 1.25rem;
+		}
+
+		&__grid-title {
+			color: $primary__color;
+			text-align: left;
+			font-family: $font-family-Neutral;
+			font-size: 1.875rem;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 2.75rem;
+			text-transform: uppercase;
+		}
+
+		&__grid-content {
+			color: $white__color;
+			font-family: $font-family-inter;
+			font-size: 1.25rem;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 1.875rem; /* 150% */
+		}
+
+		&__item {
+			color: $grey__text;
+			font-family: $font-family-inter;
+			font-size: 1rem;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 1.5rem;
+			transition: all 0.3s ease-in-out;
+
+			&:hover {
+				color: $white__color;
+				transition: all 0.3s ease-in-out;
+			}
+		}
+
+		&__button {
+			padding: 0.88rem 1.53rem;
+			color: $black__color;
+			font-family: $font-family-inter;
+			font-size: 1rem;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 1.5rem;
+			margin: 0 auto 0 0;
+		}
+
+		&__cards {
+			display: flex;
+			flex-direction: column;
+			gap: 3.12rem;
+		}
+
+		&__card-title-1 {
+			color: $white__color;
+			font-family: $font-family-Neutral;
+			font-size: 1.875rem;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 2.75rem;
+			text-transform: uppercase;
+		}
+		&__card-title {
+			color: $white__color;
+			font-family: $font-family-inter;
+			font-size: 1.125rem;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 1.375rem;
+		}
+
+		&__card-wrapper {
+			display: grid;
+			grid-template-columns: repeat(1, 1fr);
+			gap: 2.5rem;
+		}
+
+		&__card {
+			border-radius: 2.5rem;
+			background: $gray__bg__card;
+			padding: 2.13rem;
+			display: flex;
+			flex-direction: column;
+			gap: 1.75rem;
+			border: 1px solid $primary__color;
+			min-height: 13.75rem;
+		}
+
+		&__card-header {
+			display: flex;
+			gap: 1.37rem;
+			align-items: center;
+		}
+
+		&__card-icon {
+			min-width: 3.125rem;
+			min-height: 3.125rem;
+			border-radius: 50%;
+			background-color: $gray__bg;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			picture,
+			img {
+				max-width: 1.875rem;
+				width: 100%;
+			}
+		}
+
+		&__card-body {
+			color: $grey__text;
+			font-family: $font-family-inter;
+			font-size: 1rem;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 1.5rem;
+
+			span {
+				color: $primary__color;
+			}
+		}
+	}
+}
+@include media-width($md) {
+	.sms {
+	}
+}

@@ -1,6 +1,6 @@
 import $ from "jquery";
-import Aos from "aos";
-import Siema from "siema";
+import Typed from "typed.js";
+
 
 export function isWebp() {
 	function testWebP(callback) {
@@ -24,110 +24,118 @@ export function isWebp() {
 
 export function burgerMenu() {
 	$('.header__burger').on("click", function (event) {
-		$('.header__burger, .header__menu').toggleClass('active');
+		$('.header__burger, .header__nav').toggleClass('active');
 		$('body').toggleClass('lock');
 	});
 }
 
-export function sticky() {
-	window.addEventListener('scroll', function () {
-		$('header').toggleClass('sticky', window.scrollY > 0);
+export function accordion() {
+	const accordionTriggers = document.querySelectorAll('.accordion-trigger');
+
+	// Додати обробник подій для кожного заголовку
+	accordionTriggers.forEach(trigger => {
+		trigger.addEventListener('click', () => {
+			// Закрити всі аккордеони, крім того, який був клікнутий
+			accordionTriggers.forEach(otherTrigger => {
+				if (otherTrigger !== trigger) {
+					otherTrigger.classList.remove('active');
+					const otherContent = otherTrigger.nextElementSibling;
+					let parentContainer = otherTrigger.parentNode.parentNode;
+					otherContent.classList.remove('active');
+				}
+			});
+
+			// Тоглі активний клас для заголовка
+			trigger.classList.toggle('active');
+
+			// Отримати відповідний вміст аккордеону
+			const content = trigger.nextElementSibling;
+
+			// Тоглі активний клас для вмісту аккордеону
+			content.classList.toggle('active');
+		});
+	});
+}
+
+export function addClass() {
+	// Вибір усіх елементів li, що містять підменю
+	const liElementsWithSubMenu = document.querySelectorAll('.header__menu li ul');
+
+	// Проходження по усіх знайдених елементах та додавання класу
+	liElementsWithSubMenu.forEach(li => {
+		const parentLi = li.parentElement; // Отримання батьківського елемента li
+		parentLi.classList.add('accordion__mobile-trigger'); // Додавання класу до батьківського елемента li
+		li.classList.add('accordion__mobile-content'); // Додавання класу до підменю (ul)
 	});
 }
 
-export function pageNav() {
-	const headerLinks = $('.header__link');
+export function accordion_mobile_ul() {
+	const accordionTriggers = document.querySelectorAll('.accordion__mobile-trigger');
 
-	headerLinks.each(function () {
-		$(this).on('click', function (event) {
-			event.preventDefault();
+	// Додати обробник подій для кожного заголовку
+	accordionTriggers.forEach(trigger => {
+		trigger.addEventListener('click', () => {
+			// Закрити всі аккордеони, крім того, який був клікнутий
+			accordionTriggers.forEach(otherTrigger => {
+				if (otherTrigger !== trigger) {
+					otherTrigger.classList.remove('active');
+					const otherContent = otherTrigger.nextElementSibling;
+					let parentContainer = otherTrigger.parentNode.parentNode;
+					otherContent.classList.remove('active');
+				}
+			});
 
-			const targetId = $(this).attr('href');
-			const targetElement = $(`${targetId}:first`);
-			const targetOffset = targetElement.offset().top - 100;
-			$('html, body').animate({
-				scrollTop: targetOffset
-			}, 800);
+			// Тоглі активний клас для заголовка
+			trigger.classList.toggle('active');
+
+			// Отримати відповідний вміст аккордеону
+			const content = trigger.querySelector('ul');
+
+			// Тоглі активний клас для вмісту аккордеону
+			content.classList.toggle('active');
 		});
 	});
-
-	function activateMenuItem() {
-		const scrollPosition = $(window).scrollTop();
-
-		headerLinks.each(function () {
-			const section = $(`${$(this).attr('href')}:first`);
-			if (
-				section.offset().top <= scrollPosition + 105 &&
-				section.offset().top + section.outerHeight() > scrollPosition + 105
-			) {
-				headerLinks.removeClass('active');
-				headerLinks.parent().removeClass('active');
-				$(this).addClass('active');
-				$(this).parent().addClass('active');
-			}
-		});
-	}
-
-	$(window).on('scroll', activateMenuItem);
 }
 
-export function aos_js() {
-	Aos.init();
-}
-
-export function slider() {
-	const slider = new Siema({
-		selector: '.slider',
-		loop: true,
-		onChange: updatePagination,
-		duration: 1000,
-		perPage: 4,
-		easing: 'ease-out',
+export function footer_nav() {
+	const drop = document.querySelector('.footer__menu li a.drop');
+	drop.addEventListener('click', (e) => {
+		e.preventDefault();
+		drop.parentNode.classList.toggle('active');
+		drop.classList.toggle('active');
 	});
-
-	function updatePagination() {
-		const paginationItems = Array.from(document.querySelectorAll('.slider-pagination li'));
-		paginationItems.map((item, index) => {
-			if (index === slider.currentSlide) {
-				item.classList.add('active');
-			} else {
-				item.classList.remove('active');
-			}
-		});
-	}
-
-	function startAutoPlay(intervalTime) {
-		let autoPlayInterval = setInterval(function () {
-			slider.next();
-			updatePagination();
-		}, intervalTime);
-	}
-	updatePagination();
-	startAutoPlay(5000);
 }
 
-export function tel() {
-	var input = document.getElementById("phone-ip");
+export function textAnimation() {
+	const spans = document.querySelectorAll('.home__animations span');
+	if (spans) {
+		const texts = [];
 
-	input.onfocus = function (e) {
-		if (this.value === '') {
-			this.value += '+38 (';
-		}
-	};
+		spans.forEach(span => {
+			texts.push(span.textContent);
+			span.remove();
+		});
+		const newTextSpan = document.createElement('span');
+		newTextSpan.id = 'text-span';
+		document.querySelector('.home__animations').appendChild(newTextSpan);
 
-	input.onkeyup = function (e) {
-		var len = this.value.length;
-		if (len === 8) {
-			this.value += ') ';
-		}
-		if (len === 9) {
-			this.value += ' ';
-		}
-		if (len === 12) {
-			this.value += '-';
-		}
+		const options = {
+			strings: texts,
+			typeSpeed: 70, // Швидкість набору
+			backSpeed: 70, // Швидкість стирання
+			startDelay: 500, // Затримка перед початком анімації
+			backDelay: 1000, // Затримка перед стиранням
+			loop: true, // Зациклити анімацію
+			showCursor: true, // Показувати курсор
+		};
+
+		const typed = new Typed("#text-span", options);
 	}
-	if (len === 15) {
-		this.value += '-';
+	const message = document.querySelector('.home__message');
+
+	if (message) {
+		setTimeout(() => {
+			message.classList.remove('disabled');
+		}, 2000);
 	}
 }

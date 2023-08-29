@@ -1,0 +1,318 @@
+.home {
+	&__wrapper {
+		margin-top: 10.43rem;
+		display: grid;
+		grid-template-columns: 50% 10% 40%;
+	}
+
+	&__title {
+		color: var(--white-text, #fbfbfb);
+		font-family: $font-family-Neutral;
+		font-size: 6.25rem;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 8.125rem;
+		text-transform: uppercase;
+	}
+
+	&__animations {
+		span {
+			color: $primary__color;
+			font-family: $font-family-Neutral;
+			font-size: 6.25rem;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 8.125rem;
+			text-transform: uppercase;
+
+			&.typed-cursor {
+				padding-left: 1rem;
+				line-height: 7rem;
+				font-size: 7rem;
+			}
+		}
+	}
+
+	&__arrow {
+		max-width: 7.5rem;
+		picture,
+		img {
+			width: 100%;
+		}
+	}
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		justify-content: space-between;
+	}
+
+	&__text {
+		color: $white__color;
+		font-family: $font-family-inter;
+		font-size: 1.625rem;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 2.25rem;
+		justify-self: end;
+		max-width: 27.5rem;
+		span {
+			color: $primary__color;
+			font-family: $font-family-inter;
+			font-size: 1.625rem;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 2.25rem;
+		}
+	}
+
+	&__message {
+		&.disabled {
+			transform: scale(0);
+		}
+		border-radius: 1.60113rem;
+		border: 4.27px solid $primary__color;
+		background: $white__color;
+		position: relative;
+		max-width: 24rem;
+		transform-origin: bottom left;
+		transition: all 0.5s ease-in-out;
+
+		&::after {
+			content: "";
+			display: block;
+			width: 20px;
+			height: 44.5px;
+			position: absolute;
+			z-index: -1;
+			left: -9px;
+			bottom: -25px;
+			background-image: url("../img/ms-ar.svg");
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+	}
+
+	&__message-wrapper {
+		display: flex;
+		flex-direction: row-reverse;
+		gap: 1.97rem;
+		justify-content: flex-end;
+		transform: translateX(-40%);
+	}
+
+	&__icon {
+		min-width: 3.125rem;
+		height: 3.125rem;
+		background-color: $gray__bg;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		align-self: flex-end;
+	}
+
+	&__message-text {
+		color: $black__color;
+		font-family: $font-family-inter;
+		font-size: 1.48438rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 1.92969rem;
+		letter-spacing: -0.03631rem;
+		padding: 0.53rem 1.07rem;
+		position: relative;
+		z-index: 3;
+	}
+}
+
+@include media-width($md) {
+	.home {
+		&__wrapper {
+			margin-top: 5rem;
+			display: grid;
+			grid-template-columns: 40% 10% 50%;
+		}
+
+		&__title {
+			font-size: 2.5rem;
+			line-height: 3.25rem;
+		}
+
+		&__animations {
+			span {
+				font-size: 2.5rem;
+				line-height: 3.25rem;
+				&.typed-cursor {
+					padding-left: 0.2rem;
+					line-height: 3rem;
+					font-size: 3rem;
+				}
+			}
+		}
+
+		&__arrow {
+			svg {
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		&__box {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+			justify-content: space-between;
+			gap: 2.51rem;
+			justify-self: end;
+			max-width: 80%;
+		}
+
+		&__text {
+			font-size: 1rem;
+			line-height: 1.5rem;
+			max-width: 27.5rem;
+			span {
+				color: $primary__color;
+				font-family: $font-family-inter;
+				font-size: 1rem;
+				font-style: normal;
+				font-weight: 500;
+				line-height: 1.5rem;
+			}
+		}
+
+		&__message {
+			position: relative;
+
+			&::after {
+				content: "";
+				display: block;
+				width: 20px;
+				height: 44.5px;
+				position: absolute;
+				z-index: -1;
+				left: -9px;
+				bottom: -25px;
+				background-image: url("../img/ms-ar.svg");
+				background-repeat: no-repeat;
+				background-size: contain;
+			}
+		}
+
+		&__message-wrapper {
+			transform: translateX(-30%);
+		}
+
+		&__icon {
+			min-width: 2rem;
+			height: 2rem;
+			svg {
+				width: 1.25rem;
+				height: 1.25rem;
+			}
+		}
+
+		&__message-text {
+			font-size: 0.75rem;
+			line-height: 1.125rem;
+		}
+	}
+}
+
+@include media-width($sm) {
+	.home {
+		&__wrapper {
+			margin-top: 5rem;
+			display: grid;
+			grid-template-columns: 85% 15%;
+			gap: 2rem 0;
+		}
+
+		&__title {
+			font-size: 2.5rem;
+			line-height: 3.25rem;
+		}
+
+		&__animations {
+			span {
+				font-size: 2.5rem;
+				line-height: 3.25rem;
+				&.typed-cursor {
+					line-height: 3rem;
+					font-size: 3rem;
+					margin-left: -0.2rem;
+				}
+			}
+		}
+
+		&__arrow {
+			max-width: 3.125rem;
+			align-self: end;
+			svg {
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		&__box {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+			justify-content: space-between;
+			gap: 2.51rem;
+			max-width: none;
+		}
+
+		&__text {
+			font-size: 1rem;
+			line-height: 1.5rem;
+			max-width: 27.5rem;
+			span {
+				color: $primary__color;
+				font-family: $font-family-inter;
+				font-size: 1rem;
+				font-style: normal;
+				font-weight: 500;
+				line-height: 1.5rem;
+			}
+		}
+
+		&__message {
+			position: relative;
+
+			&::after {
+				content: "";
+				display: block;
+				width: 20px;
+				height: 44.5px;
+				position: absolute;
+				z-index: -1;
+				left: -9px;
+				bottom: -25px;
+				background-image: url("../img/ms-ar.svg");
+				background-repeat: no-repeat;
+				background-size: contain;
+			}
+		}
+
+		&__message-wrapper {
+			transform: translateX(0);
+		}
+
+		&__icon {
+			min-width: 2rem;
+			height: 2rem;
+			svg {
+				width: 1.25rem;
+				height: 1.25rem;
+			}
+		}
+
+		&__message-text {
+			font-size: 0.75rem;
+			line-height: 1.125rem;
+		}
+	}
+}
